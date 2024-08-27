@@ -1,12 +1,25 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, StyleSheet, Image } from 'react-native';
 
 export default function App() {
+
+  const [img, setImg] = useState(require('./src/biscoito.png'))
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-
+      <Image source={img} style={styles.img}/>
     </View>
   );
 }
 
+const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  img:{
+    width: 230,
+    height: 230
+  }
+});
